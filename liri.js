@@ -19,8 +19,8 @@ axios.get("http://omdbapi.com/?t=" + artist + "/apikey=trilogy").then(
       // console.log("You searched for: "+ artist);
       console.log("Venue: " + quick.venue.name);
       console.log("Location: " + quick.venue.city);
-      console.log("Date: moment(quick.datetime).format('MM-DD-YY'));
-      };
+      console.log("Date: "  moment(quick.datetime).format('MM-DD-YY'));
+      },
 
       function spotifySong() {
         var songArg = process.argv;
@@ -30,8 +30,7 @@ axios.get("http://omdbapi.com/?t=" + artist + "/apikey=trilogy").then(
         } else {
           for (var i = 4; i < songArg.length; i++) {
             input += songArg[i] + "+";
-          }
-        }
+          }}
 
         spotify.search({
           type: 'track',
@@ -48,11 +47,7 @@ axios.get("http://omdbapi.com/?t=" + artist + "/apikey=trilogy").then(
           console.log("Song Name: " + quick[0].name);
           console.log("Check out a Preview: " + JSON.stringify(quick[0].external_urls));
           console.log("Album: " + quick[0].album.name);
-
-
         });
-      }
-
 
       function view() {
 
@@ -86,5 +81,4 @@ axios.get("http://omdbapi.com/?t=" + artist + "/apikey=trilogy").then(
         }
 
       }
-
-      songSearch();
+songSearch();
